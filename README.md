@@ -1,0 +1,108 @@
+
+# 🏎️ Apex Motors — Beyond Ordinary
+
+Apex Motors é uma plataforma demonstrativa de automóveis premium, desenvolvida com HTML, CSS e JavaScript.
+
+O projeto apresenta uma experiência digital voltada ao universo automotivo, com um catálogo interativo de veículos esportivos e de luxo, filtros de pesquisa, informações detalhadas e um simulador ilustrativo de financiamento.
+
+## 🌐 Projeto online
+
+**Acesse o site publicado:**
+
+https://jefersonalvesrs.github.io/Apex-Motors/
+
+## 🖼️ Pré-visualização
+
+### Página inicial
+
+![Página inicial do Apex Motors](assets/images/apex-inicio.png)
+
+### Catálogo de veículos
+
+![Catálogo do Apex Motors](assets/images/apex-catalogo.png)
+
+### Simulador de financiamento
+
+![Simulador do Apex Motors](assets/images/apex-simulador.png)
+
+### Versão mobile
+
+![Versão mobile do Apex Motors](assets/images/apex-mobile.png)
+
+## ✨ Funcionalidades
+
+- Catálogo interativo com 8 veículos
+- Modelos das marcas Porsche, BMW, Mercedes-Benz e Audi
+- Pesquisa de veículos
+- Filtros por marca e categoria
+- Ordenação dos veículos
+- Visualização de informações e especificações dos modelos
+- Apresentação de preços ilustrativos
+- Simulador de financiamento com seleção do veículo
+- Ajuste do percentual de entrada e prazo de pagamento
+- Configuração da taxa de juros mensal
+- Cálculo de parcelas estimadas
+- Interface responsiva para computadores e dispositivos móveis
+
+## 🛠️ Tecnologias utilizadas
+
+- HTML5
+- CSS3
+- JavaScript
+- Git
+- GitHub
+- GitHub Pages
+
+## 📱 Responsividade
+
+O Apex Motors foi desenvolvido com uma interface adaptável a diferentes tamanhos de tela, incluindo desktop, tablet e smartphones.
+
+O catálogo, os filtros e o simulador possuem ajustes de layout para facilitar a navegação e a utilização em dispositivos móveis.
+
+## 💡 O que pratiquei neste projeto
+
+- Estruturação semântica com HTML
+- Criação de interfaces com CSS
+- Layouts responsivos e Media Queries
+- Manipulação do DOM com JavaScript
+- Manipulação de arrays e objetos
+- Busca, filtros e ordenação de dados
+- Eventos e interações do usuário
+- Cálculos dinâmicos com JavaScript
+- Animações e transições
+- Organização de arquivos e imagens
+- Versionamento com Git
+
+## 📂 Estrutura do projeto
+
+```text
+Apex-Motors/
+├── imagens/
+│   ├── hero.jpg
+│   ├── porsche-911.jpg
+│   ├── bmw-m4.jpg
+│   ├── mercedes-amg-gt.jpg
+│   ├── audi-etron.jpg
+│   ├── porsche-cayenne.jpg
+│   ├── bmw-m3.jpg
+│   ├── mercedes-c63.jpg
+│   └── audi-rsq8.jpg
+├── assets/
+│   └── images/
+│       ├── apex-inicio.png
+│       ├── apex-catalogo.png
+│       ├── apex-simulador.png
+│       └── apex-mobile.png
+├── index.html
+├── style.css
+├── script.js
+└── README.md
+```
+
+## 📌 Sobre o projeto
+
+O Apex Motors é um projeto fictício, desenvolvido para fins de estudo e portfólio.
+
+Os veículos, preços e condições de financiamento são apresentados de forma demonstrativa e não representam ofertas comerciais reais.
+
+O simulador utiliza cálculos ilustrativos e não constitui proposta de crédito. O projeto não possui vínculo oficial com as marcas automotivas apresentadas.
