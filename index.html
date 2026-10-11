@@ -1,235 +1,326 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#0b0d11">
-  <meta name="description" content="Apex Motors: explore carros extraordinários, compare modelos e simule financiamentos.">
-  <title>Apex Motors | Beyond Ordinary</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-  <script src="script.js" defer></script>
-</head>
-<body>
-  <header class="header">
-    <div class="container nav">
-      <a href="#inicio" class="logo">APEX<span>.</span><small>MOTORS</small></a>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0b0d11" />
+    <meta
+      name="description"
+      content="Apex Motors: explore carros extraordinários, compare modelos e simule financiamentos."
+    />
+    <title>Apex Motors | Beyond Ordinary</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <header class="header">
+      <div class="container nav">
+        <a href="#inicio" class="logo"
+          >APEX<span>.</span><small>MOTORS</small></a
+        >
 
-      <nav class="nav-links" id="navLinks">
-        <a href="#inicio">Início</a>
-        <a href="#catalogo">Coleção</a>
-        <a href="#sobre">Sobre</a>
-        <a href="#financiamento">Simulador</a>
-      </nav>
+        <nav class="nav-links" id="navLinks">
+          <a href="#inicio">Início</a>
+          <a href="#catalogo">Coleção</a>
+          <a href="#sobre">Sobre</a>
+          <a href="#financiamento">Simulador</a>
+        </nav>
 
-      <div class="nav-actions">
-        <button class="favorites-shortcut" id="favoritesShortcut" title="Mostrar favoritos">
-          ♥ <span id="favoritesCount">0</span>
+        <div class="nav-actions">
+          <button
+            class="favorites-shortcut"
+            id="favoritesShortcut"
+            title="Mostrar favoritos"
+          >
+            ♥ <span id="favoritesCount">0</span>
+          </button>
+          <a class="nav-cta" href="#catalogo">Explorar coleção ↗</a>
+          <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">
+            ☰
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" id="inicio">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+          <div class="eyebrow">
+            <span class="eyebrow-line"></span> PERFORMANCE & EXCLUSIVIDADE
+          </div>
+          <h1>BEYOND<br /><em>ORDINARY.</em></h1>
+          <p>
+            Não é apenas sobre dirigir. É sobre sentir cada segundo. Descubra
+            máquinas criadas para transformar qualquer estrada em uma
+            experiência.
+          </p>
+          <div class="hero-buttons">
+            <a href="#catalogo" class="btn btn-primary"
+              >EXPLORAR COLEÇÃO <span>↗</span></a
+            >
+            <a href="#sobre" class="btn btn-outline"
+              >NOSSA FILOSOFIA <span>↗</span></a
+            >
+          </div>
+          <div class="hero-stats">
+            <div><strong>08</strong><span>MODELOS EXCLUSIVOS</span></div>
+            <div><strong>04</strong><span>MARCAS ICÔNICAS</span></div>
+            <div><strong>∞</strong><span>POSSIBILIDADES</span></div>
+          </div>
+        </div>
+        <div class="hero-side-label">MOVIDO PELA PAIXÃO — DESDE 2026</div>
+        <a class="scroll-cue" href="#catalogo">ROLE PARA EXPLORAR ↓</a>
+      </section>
+
+      <section class="brands-bar">
+        <div class="container brands-inner">
+          <span>O MELHOR DO MUNDO</span>
+          <strong>PORSCHE</strong>
+          <strong>BMW</strong>
+          <strong>MERCEDES-BENZ</strong>
+          <strong>AUDI</strong>
+        </div>
+      </section>
+
+      <section class="catalog section" id="catalogo">
+        <div class="container">
+          <div class="section-heading">
+            <div>
+              <span class="section-kicker">01 / A COLEÇÃO</span>
+              <h2>ÍCONES SOBRE <span>RODAS.</span></h2>
+              <p>Explore nossa seleção de máquinas extraordinárias.</p>
+            </div>
+            <div class="results-count" id="resultsCount">08 VEÍCULOS</div>
+          </div>
+
+          <div class="filters">
+            <div class="search-field">
+              <span>⌕</span>
+              <input
+                type="search"
+                id="searchInput"
+                placeholder="Buscar modelo ou marca..."
+                aria-label="Buscar carros"
+              />
+            </div>
+            <select id="brandFilter" aria-label="Filtrar marca">
+              <option value="all">Todas as marcas</option>
+              <option value="Porsche">Porsche</option>
+              <option value="BMW">BMW</option>
+              <option value="Mercedes-Benz">Mercedes-Benz</option>
+              <option value="Audi">Audi</option>
+            </select>
+            <select id="typeFilter" aria-label="Filtrar categoria">
+              <option value="all">Todas as categorias</option>
+              <option value="Esportivo">Esportivo</option>
+              <option value="Sedã">Sedã</option>
+              <option value="SUV">SUV</option>
+            </select>
+            <select id="sortFilter" aria-label="Ordenar carros">
+              <option value="default">Destaques</option>
+              <option value="price-asc">Menor preço</option>
+              <option value="price-desc">Maior preço</option>
+              <option value="power-desc">Maior potência</option>
+              <option value="year-desc">Mais recentes</option>
+            </select>
+            <button class="clear-btn" id="clearFilters">
+              Limpar filtros ↺
+            </button>
+          </div>
+
+          <div class="quick-filters">
+            <button class="chip active" data-quick="all">Todos</button>
+            <button class="chip" data-quick="Esportivo">Esportivos</button>
+            <button class="chip" data-quick="Sedã">Sedãs</button>
+            <button class="chip" data-quick="SUV">SUVs</button>
+            <button class="chip" data-quick="favorites">♥ Favoritos</button>
+          </div>
+
+          <div class="car-grid" id="carGrid"></div>
+          <div class="empty-state hidden" id="emptyState">
+            <div>⌕</div>
+            <h3>Nenhum veículo encontrado</h3>
+            <p>Tente modificar os filtros para explorar outros modelos.</p>
+            <button class="btn btn-primary" id="resetEmpty">
+              LIMPAR FILTROS
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section class="manifesto section" id="sobre">
+        <div class="container manifesto-grid">
+          <div class="manifesto-copy">
+            <span class="section-kicker">02 / A FILOSOFIA</span>
+            <h2>MAIS QUE<br />UMA <em>ESCOLHA.</em></h2>
+            <p>
+              Para quem acredita que dirigir é uma forma de expressão. Cada
+              curva, cada aceleração e cada detalhe contam uma história.
+            </p>
+            <p>
+              A Apex Motors é uma experiência digital dedicada ao design
+              automotivo, à tecnologia e à paixão por carros excepcionais.
+            </p>
+            <a href="#catalogo" class="text-link">DESCUBRA A COLEÇÃO ↗</a>
+          </div>
+          <div class="manifesto-image">
+            <img
+              src="imagens/hero.jpg"
+              alt="Carro esportivo em uma estrada"
+              loading="lazy"
+            />
+            <span>PRECISION IN EVERY DETAIL.</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="finance section" id="financiamento">
+        <div class="container">
+          <div class="section-heading">
+            <div>
+              <span class="section-kicker">03 / DO SEU JEITO</span>
+              <h2>SIMULE SEU <span>SONHO.</span></h2>
+              <p>Uma estimativa simples para explorar possibilidades.</p>
+            </div>
+          </div>
+
+          <div class="finance-layout">
+            <div class="finance-form">
+              <label for="financeCar">ESCOLHA UM MODELO</label>
+              <select id="financeCar"></select>
+
+              <div class="range-heading">
+                <label for="downPayment">ENTRADA</label>
+                <strong id="downPaymentLabel">30%</strong>
+              </div>
+              <input
+                type="range"
+                id="downPayment"
+                min="10"
+                max="80"
+                value="30"
+                step="5"
+              />
+
+              <div class="range-heading">
+                <label for="months">PRAZO</label>
+                <strong id="monthsLabel">48 meses</strong>
+              </div>
+              <input
+                type="range"
+                id="months"
+                min="12"
+                max="72"
+                value="48"
+                step="12"
+              />
+
+              <label for="interestRate">TAXA DE JUROS MENSAL (%)</label>
+              <input
+                class="rate-input"
+                id="interestRate"
+                type="number"
+                min="0"
+                max="10"
+                step="0.1"
+                value="1.5"
+              />
+            </div>
+
+            <div class="finance-result">
+              <span>ESTIMATIVA DE PARCELA</span>
+              <div class="monthly-price" id="monthlyPrice">R$ 0</div>
+              <div class="finance-divider"></div>
+              <div class="finance-line">
+                <span>Valor do veículo</span
+                ><strong id="financePrice">—</strong>
+              </div>
+              <div class="finance-line">
+                <span>Entrada</span><strong id="financeDown">—</strong>
+              </div>
+              <div class="finance-line">
+                <span>Valor financiado</span
+                ><strong id="financeAmount">—</strong>
+              </div>
+              <div class="finance-line">
+                <span>Total das parcelas</span
+                ><strong id="financeTotal">—</strong>
+              </div>
+              <p>
+                Simulação ilustrativa pelo sistema Price. Não constitui proposta
+                de crédito. Não inclui IOF, seguros, tarifas ou outras despesas.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="closing">
+        <div class="container">
+          <span class="section-kicker">O CAMINHO É SEU</span>
+          <h2>O EXTRAORDINÁRIO<br />COMEÇA <em>AQUI.</em></h2>
+          <a href="#catalogo" class="btn btn-primary">EXPLORAR VEÍCULOS ↗</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-inner">
+        <div>
+          <a href="#inicio" class="logo"
+            >APEX<span>.</span><small>MOTORS</small></a
+          >
+          <p>Uma experiência digital para apaixonados por automóveis.</p>
+        </div>
+        <div class="footer-links">
+          <a href="#inicio">Início</a>
+          <a href="#catalogo">Coleção</a>
+          <a href="#sobre">Sobre</a>
+          <a href="#financiamento">Simulador</a>
+        </div>
+        <div class="footer-bottom">
+          <span>© 2026 APEX MOTORS — PROJETO DEMONSTRATIVO</span>
+          <span>FEITO PARA QUEM AMA DIRIGIR.</span>
+        </div>
+      </div>
+    </footer>
+
+    <div class="compare-bar hidden" id="compareBar">
+      <div class="compare-bar-inner">
+        <div>
+          <strong id="compareCount">0/3</strong>
+          <span>veículos selecionados</span>
+        </div>
+        <div class="compare-actions">
+          <button id="clearCompare">Limpar</button>
+          <button class="btn btn-primary" id="openCompare">COMPARAR ↗</button>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="modal hidden"
+      id="modal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modalTitle"
+    >
+      <div class="modal-backdrop" data-close="true"></div>
+      <div class="modal-panel">
+        <button class="modal-close" id="closeModal" aria-label="Fechar">
+          ✕
         </button>
-        <a class="nav-cta" href="#catalogo">Explorar coleção ↗</a>
-        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">☰</button>
+        <div id="modalContent"></div>
       </div>
     </div>
-  </header>
 
-  <main>
-    <section class="hero" id="inicio">
-      <div class="hero-overlay"></div>
-      <div class="container hero-content">
-        <div class="eyebrow"><span class="eyebrow-line"></span> PERFORMANCE & EXCLUSIVIDADE</div>
-        <h1>BEYOND<br><em>ORDINARY.</em></h1>
-        <p>Não é apenas sobre dirigir. É sobre sentir cada segundo. Descubra máquinas criadas para transformar qualquer estrada em uma experiência.</p>
-        <div class="hero-buttons">
-          <a href="#catalogo" class="btn btn-primary">EXPLORAR COLEÇÃO <span>↗</span></a>
-          <a href="#sobre" class="btn btn-outline">NOSSA FILOSOFIA <span>↗</span></a>
-        </div>
-        <div class="hero-stats">
-          <div><strong>08</strong><span>MODELOS EXCLUSIVOS</span></div>
-          <div><strong>04</strong><span>MARCAS ICÔNICAS</span></div>
-          <div><strong>∞</strong><span>POSSIBILIDADES</span></div>
-        </div>
-      </div>
-      <div class="hero-side-label">DRIVEN BY PASSION — EST. 2026</div>
-      <a class="scroll-cue" href="#catalogo">SCROLL TO EXPLORE ↓</a>
-    </section>
-
-    <section class="brands-bar">
-      <div class="container brands-inner">
-        <span>THE WORLD'S FINEST</span>
-        <strong>PORSCHE</strong>
-        <strong>BMW</strong>
-        <strong>MERCEDES-BENZ</strong>
-        <strong>AUDI</strong>
-      </div>
-    </section>
-
-    <section class="catalog section" id="catalogo">
-      <div class="container">
-        <div class="section-heading">
-          <div>
-            <span class="section-kicker">01 / THE COLLECTION</span>
-            <h2>ÍCONES SOBRE <span>RODAS.</span></h2>
-            <p>Explore nossa seleção de máquinas extraordinárias.</p>
-          </div>
-          <div class="results-count" id="resultsCount">08 VEÍCULOS</div>
-        </div>
-
-        <div class="filters">
-          <div class="search-field">
-            <span>⌕</span>
-            <input type="search" id="searchInput" placeholder="Buscar modelo ou marca..." aria-label="Buscar carros">
-          </div>
-          <select id="brandFilter" aria-label="Filtrar marca">
-            <option value="all">Todas as marcas</option>
-            <option value="Porsche">Porsche</option>
-            <option value="BMW">BMW</option>
-            <option value="Mercedes-Benz">Mercedes-Benz</option>
-            <option value="Audi">Audi</option>
-          </select>
-          <select id="typeFilter" aria-label="Filtrar categoria">
-            <option value="all">Todas as categorias</option>
-            <option value="Esportivo">Esportivo</option>
-            <option value="Sedã">Sedã</option>
-            <option value="SUV">SUV</option>
-          </select>
-          <select id="sortFilter" aria-label="Ordenar carros">
-            <option value="default">Destaques</option>
-            <option value="price-asc">Menor preço</option>
-            <option value="price-desc">Maior preço</option>
-            <option value="power-desc">Maior potência</option>
-            <option value="year-desc">Mais recentes</option>
-          </select>
-          <button class="clear-btn" id="clearFilters">Limpar filtros ↺</button>
-        </div>
-
-        <div class="quick-filters">
-          <button class="chip active" data-quick="all">Todos</button>
-          <button class="chip" data-quick="Esportivo">Esportivos</button>
-          <button class="chip" data-quick="Sedã">Sedãs</button>
-          <button class="chip" data-quick="SUV">SUVs</button>
-          <button class="chip" data-quick="favorites">♥ Favoritos</button>
-        </div>
-
-        <div class="car-grid" id="carGrid"></div>
-        <div class="empty-state hidden" id="emptyState">
-          <div>⌕</div>
-          <h3>Nenhum veículo encontrado</h3>
-          <p>Tente modificar os filtros para explorar outros modelos.</p>
-          <button class="btn btn-primary" id="resetEmpty">LIMPAR FILTROS</button>
-        </div>
-      </div>
-    </section>
-
-    <section class="manifesto section" id="sobre">
-      <div class="container manifesto-grid">
-        <div class="manifesto-copy">
-          <span class="section-kicker">02 / THE PHILOSOPHY</span>
-          <h2>MAIS QUE<br>UMA <em>ESCOLHA.</em></h2>
-          <p>Para quem acredita que dirigir é uma forma de expressão. Cada curva, cada aceleração e cada detalhe contam uma história.</p>
-          <p>A Apex Motors é uma experiência digital dedicada ao design automotivo, à tecnologia e à paixão por carros excepcionais.</p>
-          <a href="#catalogo" class="text-link">DESCUBRA A COLEÇÃO ↗</a>
-        </div>
-        <div class="manifesto-image">
-          <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=1100&auto=format&fit=crop&q=85" alt="Carro esportivo em uma estrada" loading="lazy">
-          <span>PRECISION IN EVERY DETAIL.</span>
-        </div>
-      </div>
-    </section>
-
-    <section class="finance section" id="financiamento">
-      <div class="container">
-        <div class="section-heading">
-          <div>
-            <span class="section-kicker">03 / MAKE IT YOURS</span>
-            <h2>SIMULE SEU <span>SONHO.</span></h2>
-            <p>Uma estimativa simples para explorar possibilidades.</p>
-          </div>
-        </div>
-
-        <div class="finance-layout">
-          <div class="finance-form">
-            <label for="financeCar">ESCOLHA UM MODELO</label>
-            <select id="financeCar"></select>
-
-            <div class="range-heading">
-              <label for="downPayment">ENTRADA</label>
-              <strong id="downPaymentLabel">30%</strong>
-            </div>
-            <input type="range" id="downPayment" min="10" max="80" value="30" step="5">
-
-            <div class="range-heading">
-              <label for="months">PRAZO</label>
-              <strong id="monthsLabel">48 meses</strong>
-            </div>
-            <input type="range" id="months" min="12" max="72" value="48" step="12">
-
-            <label for="interestRate">TAXA DE JUROS MENSAL (%)</label>
-            <input class="rate-input" id="interestRate" type="number" min="0" max="10" step="0.1" value="1.5">
-          </div>
-
-          <div class="finance-result">
-            <span>ESTIMATIVA DE PARCELA</span>
-            <div class="monthly-price" id="monthlyPrice">R$ 0</div>
-            <div class="finance-divider"></div>
-            <div class="finance-line"><span>Valor do veículo</span><strong id="financePrice">—</strong></div>
-            <div class="finance-line"><span>Entrada</span><strong id="financeDown">—</strong></div>
-            <div class="finance-line"><span>Valor financiado</span><strong id="financeAmount">—</strong></div>
-            <div class="finance-line"><span>Total das parcelas</span><strong id="financeTotal">—</strong></div>
-            <p>Simulação ilustrativa pelo sistema Price. Não constitui proposta de crédito. Não inclui IOF, seguros, tarifas ou outras despesas.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="closing">
-      <div class="container">
-        <span class="section-kicker">THE ROAD IS YOURS</span>
-        <h2>O EXTRAORDINÁRIO<br>COMEÇA <em>AQUI.</em></h2>
-        <a href="#catalogo" class="btn btn-primary">EXPLORAR VEÍCULOS ↗</a>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div class="container footer-inner">
-      <div>
-        <a href="#inicio" class="logo">APEX<span>.</span><small>MOTORS</small></a>
-        <p>Uma experiência digital para apaixonados por automóveis.</p>
-      </div>
-      <div class="footer-links">
-        <a href="#inicio">Início</a>
-        <a href="#catalogo">Coleção</a>
-        <a href="#sobre">Sobre</a>
-        <a href="#financiamento">Simulador</a>
-      </div>
-      <div class="footer-bottom">
-        <span>© 2026 APEX MOTORS — PROJETO DEMONSTRATIVO</span>
-        <span>DESIGNED FOR THE DRIVE.</span>
-      </div>
-    </div>
-  </footer>
-
-  <div class="compare-bar hidden" id="compareBar">
-    <div class="compare-bar-inner">
-      <div><strong id="compareCount">0/3</strong> <span>veículos selecionados</span></div>
-      <div class="compare-actions">
-        <button id="clearCompare">Limpar</button>
-        <button class="btn btn-primary" id="openCompare">COMPARAR ↗</button>
-      </div>
-    </div>
-  </div>
-
-  <div class="modal hidden" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-    <div class="modal-backdrop" data-close="true"></div>
-    <div class="modal-panel">
-      <button class="modal-close" id="closeModal" aria-label="Fechar">✕</button>
-      <div id="modalContent"></div>
-    </div>
-  </div>
-
-  <div class="toast hidden" id="toast" role="status"></div>
-</body>
+    <div class="toast hidden" id="toast" role="status"></div>
+  </body>
 </html>
